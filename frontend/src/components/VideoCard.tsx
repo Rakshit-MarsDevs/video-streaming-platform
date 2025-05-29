@@ -11,6 +11,7 @@ interface VideoCardProps {
 const VideoCard: React.FC<VideoCardProps> = memo(({ video }) => {
   // Memoize expensive computations
   const formattedDate = useMemo(() => {
+    if (!video.createdAt) return null;
     const date = new Date(video.createdAt);
     return date.toLocaleDateString('en-US', {
       year: 'numeric',
@@ -20,6 +21,7 @@ const VideoCard: React.FC<VideoCardProps> = memo(({ video }) => {
   }, [video.createdAt]);
 
   const truncatedDescription = useMemo(() => {
+    if (!video.description) return null;
     return video.description.length > 100
       ? `${video.description.substring(0, 100)}...`
       : video.description;
@@ -34,16 +36,28 @@ const VideoCard: React.FC<VideoCardProps> = memo(({ video }) => {
   }, [video.tags]);
 
   const fileType = useMemo(() => {
+    if (!video.mimeType) return null;
     return video.mimeType.split('/')[1].toUpperCase();
   }, [video.mimeType]);
 
   const formattedFileSize = useMemo(() => {
+    if (!video.fileSize) return null;
     return formatFileSize(video.fileSize);
   }, [video.fileSize]);
 
   const formattedDuration = useMemo(() => {
-    return video.duration ? formatDuration(video.duration) : '';
+    if (!video.duration) return null;
+    return formatDuration(video.duration);
   }, [video.duration]);
+
+  const userInitial = useMemo(() => {
+    if (!video.uploadedBy?.username) return null;
+    return video.uploadedBy.username.charAt(0).toUpperCase();
+  }, [video.uploadedBy]);
+
+  const hasUserInfo = useMemo(() => {
+    return Boolean(video.uploadedBy?.username);
+  }, [video.uploadedBy]);
 
   return (
     <div className="video-card">
@@ -64,26 +78,39 @@ const VideoCard: React.FC<VideoCardProps> = memo(({ video }) => {
         </div>
 
         <div className="video-info">
-          <h3 className="video-title" title={video.title}>
-            {video.title}
-          </h3>
+          <div className="video-main-info">
+            <h3 className="video-title" title={video.title}>
+              {video.title}
+            </h3>
 
-          <p className="video-description" title={video.description}>
-            {truncatedDescription}
-          </p>
+            {truncatedDescription && (
+              <div className="video-description-container">
+                <span className="description-label">Description - </span>
+                <p className="video-description" title={video.description}>
+                  {truncatedDescription}
+                </p>
+              </div>
+            )}
+            
+            {hasUserInfo && (
+              <div className="video-uploader">
+                {userInitial && (
+                  <div className="uploader-avatar">
+                    {userInitial}
+                  </div>
+                )}
+                <span className="uploader-name">
+                  By {video.uploadedBy.username}
+                </span>
+              </div>
+            )}
+          </div>
 
           <div className="video-meta">
-            <div className="video-uploader">
-              By {video.uploadedBy.username}
-            </div>
             <div className="video-stats">
-              <span className="views">{video.views || 0} views</span>
-              <span className="upload-date">
-                {formattedDate}
-              </span>
-              <span className="views">
-                {formattedFileSize} {fileType}
-              </span>
+              <span>{video.views || 0} views</span>
+              {formattedDate && <span>{formattedDate}</span>}
+              {formattedFileSize && <span>{formattedFileSize}</span>}
             </div>
           </div>
 

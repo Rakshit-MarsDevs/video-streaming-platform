@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { SearchIcon } from '../assets/icons/index.tsx';
 import '../css/components/SearchBar.css';
 
 interface SearchBarProps {
@@ -7,7 +8,7 @@ interface SearchBarProps {
 
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [query, setQuery] = useState('');
-  const debounceRef = useRef<NodeJS.Timeout | null>(null);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastSearchRef = useRef('');
 
   // Optimized debounced search function
@@ -74,14 +75,15 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
   return (
     <div className="search-bar">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="search-form">
         <div className="search-container">
           <input
             type="text"
             value={query}
             onChange={handleInputChange}
-            placeholder="Search videos... (auto-search after 3 chars)"
+            placeholder="Search videos..."
             className="search-input"
+            aria-label="Search videos"
           />
           <div className="search-actions">
             {query && (
@@ -94,8 +96,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
                 ×
               </button>
             )}
-            <button type="submit" className="search-button">
-              🔍
+            <button type="submit" className="search-button" aria-label="Search">
+              <SearchIcon />
             </button>
           </div>
         </div>

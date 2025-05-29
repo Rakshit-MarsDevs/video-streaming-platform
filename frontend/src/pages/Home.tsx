@@ -4,7 +4,7 @@ import { videoAPI } from '../services/api.ts';
 import VideoCard from '../components/VideoCard.tsx';
 import SearchBar from '../components/SearchBar.tsx';
 import Pagination from '../components/Pagination.tsx';
-import { SparkleIcon, ChartIcon, WarningIcon, LearnIcon, GridIcon, ListIcon, VideoIcon, RocketIcon } from '../assets/icons/index.tsx';
+import { SparkleIcon, ChartIcon, WarningIcon, LearnIcon, GridIcon, ListIcon, VideoIcon, RocketIcon, SearchIcon } from '../assets/icons/index.tsx';
 import '../css/pages/Home.css';
 
 const Home: React.FC = () => {
@@ -137,7 +137,10 @@ const Home: React.FC = () => {
 
         <div className="search-section">
           <div className="search-header">
-            <h2 className="search-title">Find Your Content</h2>
+            <h2 className="search-title">
+              <SearchIcon />
+              Find Your Content
+            </h2>
             <div className="search-controls">
               <div className="sort-control">
                 <label htmlFor="sort-select">Sort by:</label>
