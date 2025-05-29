@@ -575,51 +575,61 @@ docker-compose up --build
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes following the code style
-4. Test with both Docker and manual setup
-5. Update documentation if needed
-6. Commit your changes (`git commit -m 'Add some amazing feature'`)
-7. Push to the branch (`git push origin feature/amazing-feature`)
-8. Open a Pull Request
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
-### Code Style Guidelines
-- Use TypeScript for type safety
-- Follow ESLint and Prettier configurations
-- Write meaningful commit messages
-- Add comments for complex logic
-- Update tests when adding new features
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📝 License
+Please make sure to update tests as appropriate.
+
+## 📝 Code of Conduct
+
+Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) for details on our code of conduct.
+
+## 🔒 Security
+
+If you discover any security related issues, please email [your-email] instead of using the issue tracker.
+For more information, please read our [SECURITY.md](SECURITY.md) file.
+
+## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
-- **React Player** for seamless video playback functionality
-- **MongoDB** for flexible document storage and powerful querying
-- **Redis** for high-performance caching and rate limiting
-- **Express.js** for robust and scalable API development
-- **Docker** for consistent development and deployment environments
-- **TypeScript** for enhanced developer experience and code quality
+* [React.js](https://reactjs.org/) - Frontend Framework
+* [Node.js](https://nodejs.org/) - Backend Runtime
+* [Express.js](https://expressjs.com/) - Backend Framework
+* [MongoDB](https://www.mongodb.com/) - Database
+* [Redis](https://redis.io/) - Caching & Rate Limiting
+* [Docker](https://www.docker.com/) - Containerization
 
-## 📞 Support
+## ⚠️ Known Issues
 
-If you have any questions or run into issues:
+- Video processing might take longer for large files
+- Mobile upload is currently limited to 100MB
+- Safari browser has limited video format support
 
-1. **Check the documentation** above for common solutions
-2. **Search existing issues** in the repository
-3. **Create a new issue** with:
-   - Detailed description of the problem
-   - Steps to reproduce
-   - Error logs and screenshots
-   - Environment details (Docker/manual, OS, versions)
+## 🗺️ Roadmap
 
-### Getting Help
-- 📧 Email: [your-email@example.com]
-- 💬 Discord: [Your Discord Server]
-- 📱 Twitter: [@your-twitter]
+- [ ] Add video processing queue with Bull
+- [ ] Implement WebSocket for real-time notifications
+- [ ] Add video quality selection
+- [ ] Support for live streaming
+- [ ] Add user profiles and social features
+
+## 📊 Project Status
+
+This project is actively maintained and in development. We welcome contributions and feedback.
+
+## 📞 Contact
+
+Your Name - [@your_twitter](https://twitter.com/your_twitter) - email@example.com
+
+Project Link: [https://github.com/your_username/video-streaming-platform](https://github.com/your_username/video-streaming-platform)
 
 ---
 
