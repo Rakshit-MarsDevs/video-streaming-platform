@@ -1,0 +1,50 @@
+.user-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  border: 2px solid transparent;
+}
+
+.user-avatar.sm {
+  width: 32px;
+  height: 32px;
+  font-size: 0.875rem;
+}
+
+.user-avatar.md {
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
+}
+
+.user-avatar.lg {
+  width: 48px;
+  height: 48px;
+  font-size: 1.25rem;
+}
+
+.user-avatar:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+  transform: scale(1.05);
+}
+
+/* Accessibility */
+.user-avatar:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .user-avatar {
+    border-width: 2px;
+    border-color: var(--text-primary);
+  }
+} 

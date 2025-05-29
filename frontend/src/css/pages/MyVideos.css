@@ -1,0 +1,600 @@
+.my-videos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.my-videos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.my-videos-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.my-videos-header p {
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin: 0;
+  flex-basis: 100%;
+}
+
+.upload-new-btn {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  text-decoration: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.upload-new-btn:hover {
+  background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+.videos-info {
+  margin-bottom: 2rem;
+}
+
+.videos-info p {
+  color: #6c757d;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.my-videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.my-video-item {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.my-video-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.video-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  background: none;
+  border: 1px solid #dee2e6;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+  justify-content: center;
+}
+
+.view-btn:hover {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.delete-btn:hover:not(:disabled) {
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+.delete-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.video-stats-detailed {
+  padding: 1rem;
+  background-color: #fff;
+  border-top: 1px solid #e9ecef;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f8f9fa;
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.85rem;
+}
+
+.stat-value {
+  color: #333;
+  font-size: 0.85rem;
+  text-align: right;
+  word-break: break-word;
+  max-width: 60%;
+}
+
+.stat-value.public {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.stat-value.private {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.no-videos {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 16px;
+  margin: 2rem 0;
+}
+
+.no-videos-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.no-videos h3 {
+  font-size: 1.75rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.no-videos p {
+  color: #6c757d;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.upload-first-btn {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.upload-first-btn:hover {
+  background: linear-gradient(135deg, #218838 0%, #1ea085 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #f5c6cb;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.error-message button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.error-message button:hover {
+  background-color: #c82333;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .my-videos-container {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .my-videos-header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .my-videos-header h1 {
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .my-videos-header p {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .upload-new-btn {
+    align-self: center;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .my-videos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .video-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .action-btn {
+    width: 100%;
+    padding: 0.625rem 1rem;
+  }
+
+  .stat-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .stat-value {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .no-videos {
+    padding: 3rem 1rem;
+  }
+
+  .no-videos h3 {
+    font-size: 1.5rem;
+  }
+
+  .no-videos p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .my-videos-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .my-videos-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .my-videos-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .video-actions {
+    padding: 0.75rem;
+  }
+
+  .action-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .video-stats-detailed {
+    padding: 0.75rem;
+  }
+
+  .stat-item {
+    padding: 0.375rem 0;
+  }
+
+  .stat-label,
+  .stat-value {
+    font-size: 0.8rem;
+  }
+
+  .no-videos {
+    padding: 2rem 1rem;
+  }
+
+  .no-videos-icon {
+    font-size: 3rem;
+  }
+
+  .no-videos h3 {
+    font-size: 1.25rem;
+  }
+
+  .upload-first-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Loading states */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading-overlay .loading-spinner {
+  width: 60px;
+  height: 60px;
+  border-width: 4px;
+}
+
+/* Accessibility improvements */
+.my-video-item:focus-within {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.action-btn:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .my-video-item {
+    border: 2px solid #000;
+  }
+
+  .my-videos-header h1 {
+    color: #000;
+  }
+
+  .upload-new-btn,
+  .upload-first-btn {
+    background: #000;
+    border: 2px solid #000;
+  }
+
+  .action-btn {
+    border-color: #000;
+    color: #000;
+  }
+
+  .view-btn:hover {
+    background-color: #000;
+    border-color: #000;
+  }
+
+  .delete-btn:hover:not(:disabled) {
+    background-color: #000;
+    border-color: #000;
+  }
+
+  .stat-value.public {
+    color: #000;
+  }
+
+  .stat-value.private {
+    color: #000;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .my-video-item,
+  .upload-new-btn,
+  .upload-first-btn,
+  .action-btn {
+    transition: none;
+  }
+
+  .my-video-item:hover,
+  .upload-new-btn:hover,
+  .upload-first-btn:hover {
+    transform: none;
+  }
+
+  .loading-spinner {
+    animation: none;
+    border-top-color: #007bff;
+  }
+}
+
+/* Print styles */
+@media print {
+  .video-actions,
+  .upload-new-btn,
+  .upload-first-btn,
+  .error-message button {
+    display: none;
+  }
+
+  .my-video-item {
+    box-shadow: none;
+    border: 1px solid #000;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  .my-videos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* Animation for video deletion */
+.my-video-item.deleting {
+  opacity: 0.5;
+  pointer-events: none;
+  animation: fadeOut 0.3s ease-out;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0.5; }
+}
+
+/* Empty state animation */
+.no-videos {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Grid layout improvements for larger screens */
+@media (min-width: 1400px) {
+  .my-videos-container {
+    max-width: 1400px;
+  }
+
+  .my-videos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+/* Dark mode support (for future enhancement) */
+@media (prefers-color-scheme: dark) {
+  .my-videos-container {
+    color: #e2e8f0;
+  }
+
+  .my-videos-header h1 {
+    color: #e2e8f0;
+  }
+
+  .my-video-item {
+    background-color: #2d3748;
+    border-color: #4a5568;
+  }
+
+  .video-actions {
+    background-color: #4a5568;
+    border-color: #718096;
+  }
+
+  .video-stats-detailed {
+    background-color: #2d3748;
+    border-color: #4a5568;
+  }
+
+  .action-btn {
+    border-color: #718096;
+    color: #e2e8f0;
+  }
+
+  .view-btn:hover {
+    background-color: #63b3ed;
+    color: #1a202c;
+    border-color: #63b3ed;
+  }
+
+  .stat-item {
+    border-color: #4a5568;
+  }
+
+  .stat-label {
+    color: #a0aec0;
+  }
+
+  .stat-value {
+    color: #e2e8f0;
+  }
+
+  .no-videos {
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  }
+
+  .no-videos h3 {
+    color: #e2e8f0;
+  }
+}
